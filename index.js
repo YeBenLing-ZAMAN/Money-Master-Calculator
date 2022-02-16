@@ -1,8 +1,7 @@
 
 function forStringValuedation(value , message){
-    if(isNaN(value)){
+    if(isNaN(value) || (value =='')){
         alert (`${message} input is not a number \n please Enter a Number.`);
-        // console.log(`${message} input is not a number \n please Enter a Number.`)
     }else{
         console.log("number");
     }
@@ -19,9 +18,14 @@ document.getElementById('balance-calculate').addEventListener('click', function(
     const cloths = document.getElementById('cloths').value;
     forStringValuedation(cloths , "cloths");
 
+    // expenses calcution
     const totalExpenses = parseFloat(food) + parseFloat(rent) +parseFloat(cloths);
-    let expenses = document.getElementById('expenses');
-    console.log(expenses);
+    const expenses = document.getElementById('expenses');
     expenses.innerText = totalExpenses ;
+
+    // balance calution 
+    const totalBalance = parseFloat(income) - totalExpenses;
+    const balance = document.getElementById('balance');
+    balance.innerText = totalBalance ;
    console.log();
 })
