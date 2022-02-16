@@ -19,6 +19,9 @@ document.getElementById('balance-calculate').addEventListener('click', function(
     const cloths = document.getElementById('cloths').value;
     forStringValuedation(cloths , "cloths");
 
-   
+    const totalExpenses = parseFloat(food) + parseFloat(rent) +parseFloat(cloths);
+    let expenses = document.getElementById('expenses');
+    console.log(expenses);
+    expenses.innerText = totalExpenses ;
    console.log();
 })
