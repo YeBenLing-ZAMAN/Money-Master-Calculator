@@ -19,7 +19,7 @@ document.getElementById('balance-calculate').addEventListener('click', function(
     forStringValuedation(cloths , "cloths");
 
     // expenses calcution
-    const totalExpenses = parseFloat(food) + parseFloat(rent) +parseFloat(cloths);
+    const totalExpenses = parseFloat(food) + parseFloat(rent) + parseFloat(cloths);
     const expenses = document.getElementById('expenses');
     expenses.innerText = totalExpenses ;
 
@@ -27,5 +27,15 @@ document.getElementById('balance-calculate').addEventListener('click', function(
     const totalBalance = parseFloat(income) - totalExpenses;
     const balance = document.getElementById('balance');
     balance.innerText = totalBalance ;
+
+
+    // saving section 
+    const incomePercetage = document.getElementById('percentage').value;
+    const saving = parseFloat(income) * parseFloat(incomePercetage)/100;
+
+    // show remaing-balance and save-amount
+    document.getElementById('save-amount').innerText = saving;
+    document.getElementById('remaing-balance').innerText = totalBalance - saving;
+
    console.log();
 })
