@@ -1,1 +1,0 @@
-window.alert('we are ready');

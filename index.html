@@ -11,9 +11,81 @@
 </head>
 
 <body>
-    <h1 class="bg-danger">we are read to develop</h1>
-    <p class="zaman">this is zalam</p>
+    <div class="container mb-5">
+        <!-- title  -->
+        <h1 class="title my-5 text-capitalize  text-center">expensive saving mater</h1>
 
+        <!-- main section -->
+        <main class="row row-cols-1 row-cols-md-2 g-5">
+            <!-- left or upper section image part  -->
+            <div>
+                <img src="./image/moneySave.jpg" class="img-fluid" alt="">
+            </div>
+
+            <!-- right or down section of Calculation part  -->
+            <div class="calculator-bg p-5">
+                <!-- income section -->
+                <div class="px-5 py-2">
+                    <h3>Income</h3>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">income</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+                <!-- Expenses section -->
+                <div class="px-5 py-2">
+                    <h3>Expenses</h3>
+                    <!-- food input -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Food</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <!-- rent input -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Rent</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <!-- cloths -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Cloths</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+                <!-- calculate this input section -->
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-info fw-bolder w-50 mb-3">Calculate</button>
+                </div>
+                <!-- result showing section  -->
+                <div class="mb-5  d-flex flex-column  align-items-center">
+                    <h4>Total expenses :5500</h4>
+                    <h4>Balance :4500</h4>
+                </div>
+
+                <!-- input for saving section  -->
+                <div class="px-5 ">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control " placeholder="Enter Saving Percentage(%) of Income"
+                            aria-label="" aria-describedby="button-addon2">
+                        <span class="input-group-text text-success fw-bold ">%</span>
+                        <!-- calculate for saving section  -->
+                        <button class="btn btn-outline-info fw-bolder" type="button" id="button-addon2">save</button>
+                    </div>
+                </div>
+                <!-- show saving and balance section  -->
+                <div class="mb-1 d-flex flex-column  align-items-center">
+                    <h4>Save Amount : 3000</h4>
+                    <h4>Remaing Balance : 4000</h4>
+                </div>
+
+
+            </div>
+        </main>
+
+    </div>
     <!-- booststrps js file link -->
     <script src="./bootstraps/bootstrap.bundle.min.js"></script>
     <!--js script link  -->
