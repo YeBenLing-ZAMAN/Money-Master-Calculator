@@ -48,7 +48,6 @@ document.getElementById('balance-calculate').addEventListener('click', function 
         const totalExpenses = (food) + (rent) + (cloths);
         const expenses = document.getElementById('expenses');
         expenses.innerText = totalExpenses;
-        console.log("i am tagert");
 
         if (totalExpenses > (income)) {
             // notify expenses is large than income 
