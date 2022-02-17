@@ -87,7 +87,7 @@ document.getElementById('save').addEventListener('click', function (event) {
         } else {
             setZero('save-amount');
             setZero('remaing-balance');
-            alert("your have enough $ money to save");
+            alert("your haven't enough $ money to save");
         }
     }
 
