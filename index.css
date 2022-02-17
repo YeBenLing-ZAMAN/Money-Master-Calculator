@@ -1,7 +1,13 @@
 .title{
     color: tomato;
 }
+/* .main-section{
+    position: relative;
 
+} */
 .calculator-bg{
     background-color: #F8F8F8;
+}
+.clear-button{
+    position:absolute;
 }

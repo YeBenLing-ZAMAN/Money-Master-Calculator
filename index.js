@@ -1,4 +1,9 @@
 
+// its asign zero in as innerTest 
+function setZero (idName){
+    document.getElementById(idName).innerText = '000';
+}
+
 // Number and empty input valedation section  
 function forStringValuedation(amount, message) {
     if (isNaN(amount)) {
@@ -20,7 +25,7 @@ function forStringValuedation(amount, message) {
 function getInput(idField) {
     const amount = document.getElementById(idField).value;
     const inputValue = forStringValuedation(amount, idField);
-    if (inputValue == true) {
+    if (inputValue) {
         return amount;
     } else {
         return '';
@@ -54,6 +59,9 @@ document.getElementById('balance-calculate').addEventListener('click', function 
             const balance = document.getElementById('balance');
             balance.innerText = totalBalance;
         }
+    }else{
+        // programer termated
+        return ;
     }
 
 
@@ -75,11 +83,22 @@ document.getElementById('save').addEventListener('click', function (event) {
         document.getElementById('save-amount').innerText = saving;
         document.getElementById('remaing-balance').innerText = remaingBalance;
     }else {
-        document.getElementById('save-amount').innerText = '000';
-        document.getElementById('remaing-balance').innerText = '000';
+        setZero('save-amount');
+        setZero('remaing-balance');
         alert("your have enough $ money to save");
     }
 });
 
+// for clear all input field 
 
+function clearInput(){
+    const allInput = document.getElementsByTagName('input');
+    for(const field of allInput){
+        field.value= ' ';
+    }
+    setZero('save-amount');
+    setZero('remaing-balance');
+    setZero('expenses');
+    setZero('balance');
+}
 

@@ -11,82 +11,84 @@
 </head>
 
 <body>
-    
+
     <div class="container mb-5">
         <!-- title  -->
         <h1 class="title my-5 text-capitalize  text-center">expensive saving mater</h1>
 
+
         <!-- main section -->
-        <main class="row row-cols-1 row-cols-md-2 g-5">
+        <main class="row row-cols-1 row-cols-md-2 g-5 ">
+
+
             <!-- left or upper section image part  -->
             <div>
                 <img src="./image/moneySave.jpg" class="img-fluid" alt="">
             </div>
 
             <!-- right or down section of Calculation part  -->
-            <div class="calculator-bg p-5">
-                <!-- income section -->
-                <div class="px-5 py-2">
-                    <h3>Income</h3>
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">income</span>
-                        <input id="income" type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                <div class="calculator-bg p-5 position-relative">
+                    <button onclick="clearInput()" class="btn btn-danger position-absolute top-0 end-0 ">Clear</button>
+                    <!-- income section -->
+                    <div class="px-5 py-2">
+                        <h3>Income</h3>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">income</span>
+                            <input id="income" type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
                     </div>
-                </div>
-                <!-- Expenses section -->
-                <div class="px-5 py-2">
-                    <h3>Expenses</h3>
-                    <!-- food input -->
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Food</span>
-                        <input id="food" type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                    <!-- Expenses section -->
+                    <div class="px-5 py-2">
+                        <h3>Expenses</h3>
+                        <!-- food input -->
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Food</span>
+                            <input id="food" type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <!-- rent input -->
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Rent</span>
+                            <input id="rent" type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <!-- cloths -->
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Cloths</span>
+                            <input id="cloths" type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
                     </div>
-                    <!-- rent input -->
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Rent</span>
-                        <input id="rent" type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                    <!-- calculate this input section -->
+                    <div class="text-center">
+                        <button id="balance-calculate" type="button" class="btn btn-outline-info fw-bolder w-50 mb-3"
+                            data-bs-toggle="modal">Calculate</button>
                     </div>
-                    <!-- cloths -->
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Cloths</span>
-                        <input id="cloths" type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                    <!-- result showing section  -->
+                    <div class="mb-5  d-flex flex-column  align-items-center">
+                        <h4>Total expenses :<span id="expenses">000</span></h4>
+                        <h4>Balance :<span id="balance">000</span></h4>
                     </div>
-                </div>
-                <!-- calculate this input section -->
-                <div class="text-center">
-                    <button id="balance-calculate" type="button"
-                        class="btn btn-outline-info fw-bolder w-50 mb-3" data-bs-toggle="modal">Calculate</button>
-                </div>
-                <!-- result showing section  -->
-                <div class="mb-5  d-flex flex-column  align-items-center">
-                    <h4>Total expenses :<span id="expenses">000</span></h4>
-                    <h4>Balance :<span id="balance">000</span></h4>
-                </div>
 
-                <!-- input for saving section  -->
-                <div class="px-5 ">
-                    <div class="input-group mb-3">
-                        <input id="percentage" type="text" class="form-control "
-                            placeholder="Enter Saving Percentage(%) of Income" aria-label=""
-                            aria-describedby="button-addon2">
-                        <span class="input-group-text text-success fw-bold ">%</span>
-                        <!-- calculate for saving section  -->
-                        <button id="save" class="btn btn-outline-info fw-bolder" type="button"
-                            id="button-addon2">save</button>
+                    <!-- input for saving section  -->
+                    <div class="px-5 ">
+                        <div class="input-group mb-3">
+                            <input id="percentage" type="text" class="form-control "
+                                placeholder="Enter Saving Percentage(%) of Income" aria-label=""
+                                aria-describedby="button-addon2">
+                            <span class="input-group-text text-success fw-bold ">%</span>
+                            <!-- calculate for saving section  -->
+                            <button id="save" class="btn btn-outline-info fw-bolder" type="button"
+                                id="button-addon2">save</button>
+                        </div>
+                    </div>
+                    <!-- show saving and balance section  -->
+                    <div class="mb-1 d-flex flex-column  align-items-center">
+                        <h4>Save Amount : <span id="save-amount">000</span> </h4>
+                        <h4>Remaing Balance : <span id="remaing-balance">000</span></h4>
                     </div>
                 </div>
-                <!-- show saving and balance section  -->
-                <div class="mb-1 d-flex flex-column  align-items-center">
-                    <h4>Save Amount : <span id="save-amount">000</span> </h4>
-                    <h4>Remaing Balance : <span id="remaing-balance">000</span></h4>
-                </div>
-
-
-            </div>
         </main>
 
     </div>
