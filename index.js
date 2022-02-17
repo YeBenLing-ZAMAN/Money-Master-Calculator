@@ -1,12 +1,15 @@
 
 // Number and empty input valedation section  
 function forStringValuedation(amount, message) {
-    if (isNaN(amount) || (amount == '') || (parseFloat(amount) < 0)) {
-        // alert(`${message} input is not a number \n please Enter a Number.`);
-        const errorHeading = document.createElement('li');
-        const error = document.getElementById('error-store');
-        errorHeading.innerHTML = `<li>${message} input is not a number \n please Enter a Number.</li>`;
-        error.appendChild(errorHeading);
+    if (isNaN(amount)) {
+        alert(`${message} input is not a number \nplease Enter a Number.`);
+        return false
+    } else if (amount == '') {
+        alert(`${message} please Enter a Number.`);
+        return false
+    }
+    else if ((parseFloat(amount) < 0)) {
+        alert(`${message} input is a negative \nplease Enter a postive Number.`);
         return false
     } else {
         return true;
@@ -17,46 +20,43 @@ function forStringValuedation(amount, message) {
 function getInput(idField) {
     const amount = document.getElementById(idField).value;
     const inputValue = forStringValuedation(amount, idField);
-    if (true) {
+    if (inputValue == true) {
         return amount;
     } else {
         return '';
     }
 }
 
-document.getElementById('balance-calculate').addEventListener('click', function (event) {
-    // refresh error 
-    const error = document.getElementById('error-store');
-    error.innerHTML = '';
+// part -01 income and expenses handle 
+
+document.getElementById('balance-calculate').addEventListener('click', function () {
+
     // input income and expensess with valuedation 
-    const income = getInput('income');
-    const food = getInput('food');
-    const rent = getInput('rent');
-    const cloths = getInput('cloths');
+    const income = parseFloat(getInput('income'));
+    const food = parseFloat(getInput('food'));
+    const rent = parseFloat(getInput('rent'));
+    const cloths = parseFloat(getInput('cloths'));
 
-    //error show
-    const erroeShow = document.getElementById('exampleModal');
-    if(error.innerHTML != ''){
-        if (true) {
-            document.getElementById('balance-calculate').setAttribute("data-bs-target", "#exampleModal");
-            document.getElementById('balance-calculate').setAttribute("data-bs-dismiss", "modal");
+    // expenses calcution
 
+    if ((isNaN(income) == false) && (isNaN(food) == false) && (isNaN(rent) == false) && (isNaN(cloths) == false)) {
+        const totalExpenses = (food) + (rent) + (cloths);
+        const expenses = document.getElementById('expenses');
+        expenses.innerText = totalExpenses;
+        console.log("i am tagert");
+
+        if (totalExpenses > (income)) {
+            // notify expenses is large than income 
+            alert("income is less then expenses");
+        } else {
+            // balance calution 
+            const totalBalance = (income) - totalExpenses;
+            const balance = document.getElementById('balance');
+            balance.innerText = totalBalance;
         }
     }
- 
-    // expenses calcution
-    const totalExpenses = parseFloat(food) + parseFloat(rent) + parseFloat(cloths);
-    const expenses = document.getElementById('expenses');
-    expenses.innerText = totalExpenses;
 
-    if (totalExpenses > parseFloat(income)) {
-        // alert("income is less then expenses");
-    } else {
-        // balance calution 
-        const totalBalance = parseFloat(income) - totalExpenses;
-        const balance = document.getElementById('balance');
-        balance.innerText = totalBalance;
-    }
+
 });
 
 
@@ -74,4 +74,6 @@ document.getElementById('save').addEventListener('click', function (event) {
     document.getElementById('save-amount').innerText = saving;
     document.getElementById('remaing-balance').innerText = totalBalance - saving;
 });
+
+
 
