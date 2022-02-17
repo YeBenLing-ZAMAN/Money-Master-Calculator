@@ -2,10 +2,10 @@
 // Number and empty input valedation section  
 function forStringValuedation(amount, message) {
     if (isNaN(amount)) {
-        alert(`${message} input is not a number \nplease Enter a Number.`);
+        alert(`${message} money is not a number \nplease Enter a Number.`);
         return false
     } else if (amount == '') {
-        alert(`${message} please Enter a Number.`);
+        alert(`Please add your $ ${message} Money`);
         return false
     }
     else if ((parseFloat(amount) < 0)) {
@@ -39,7 +39,7 @@ document.getElementById('balance-calculate').addEventListener('click', function 
 
     // expenses calcution
 
-    if ((isNaN(income) == false) && (isNaN(food) == false) && (isNaN(rent) == false) && (isNaN(cloths) == false)) {
+    if ((!isNaN(income)) && (!isNaN(food)) && (!isNaN(rent)) && (!isNaN(cloths))) {
         const totalExpenses = (food) + (rent) + (cloths);
         const expenses = document.getElementById('expenses');
         expenses.innerText = totalExpenses;
@@ -60,7 +60,7 @@ document.getElementById('balance-calculate').addEventListener('click', function 
 });
 
 
-
+// part -02 saving section handle 
 
 document.getElementById('save').addEventListener('click', function (event) {
     const income = getInput('income');
@@ -69,10 +69,16 @@ document.getElementById('save').addEventListener('click', function (event) {
     // saving section 
     const incomePercetage = document.getElementById('percentage').value;
     const saving = parseFloat(income) * parseFloat(incomePercetage) / 100;
-
-    // show remaing-balance and save-amount
-    document.getElementById('save-amount').innerText = saving;
-    document.getElementById('remaing-balance').innerText = totalBalance - saving;
+    const remaingBalance = totalBalance - saving;
+    if(remaingBalance >= 0){
+        // show remaing-balance and save-amount
+        document.getElementById('save-amount').innerText = saving;
+        document.getElementById('remaing-balance').innerText = remaingBalance;
+    }else {
+        document.getElementById('save-amount').innerText = '000';
+        document.getElementById('remaing-balance').innerText = '000';
+        alert("your have enough $ money to save");
+    }
 });
 
 
