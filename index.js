@@ -1,6 +1,6 @@
 
 // its asign zero in as innerTest 
-function setZero (idName){
+function setZero(idName) {
     document.getElementById(idName).innerText = '000';
 }
 
@@ -60,9 +60,9 @@ document.getElementById('balance-calculate').addEventListener('click', function 
             const balance = document.getElementById('balance');
             balance.innerText = totalBalance;
         }
-    }else{
+    } else {
         // programer termated
-        return ;
+        return;
     }
 
 
@@ -76,26 +76,29 @@ document.getElementById('save').addEventListener('click', function (event) {
     const totalBalance = document.getElementById('balance').innerText;
 
     // saving section 
-    const incomePercetage = document.getElementById('percentage').value;
+    const incomePercetage = parseFloat(getInput('percentage'));
     const saving = parseFloat(income) * parseFloat(incomePercetage) / 100;
     const remaingBalance = totalBalance - saving;
-    if(remaingBalance >= 0){
-        // show remaing-balance and save-amount
-        document.getElementById('save-amount').innerText = saving;
-        document.getElementById('remaing-balance').innerText = remaingBalance;
-    }else {
-        setZero('save-amount');
-        setZero('remaing-balance');
-        alert("your have enough $ money to save");
+    if (!isNaN(incomePercetage)) {
+        if (remaingBalance >= 0) {
+            // show remaing-balance and save-amount
+            document.getElementById('save-amount').innerText = saving;
+            document.getElementById('remaing-balance').innerText = remaingBalance;
+        } else {
+            setZero('save-amount');
+            setZero('remaing-balance');
+            alert("your have enough $ money to save");
+        }
     }
+
 });
 
 // for clear all input field 
 
-function clearInput(){
+function clearInput() {
     const allInput = document.getElementsByTagName('input');
-    for(const field of allInput){
-        field.value= ' ';
+    for (const field of allInput) {
+        field.value = ' ';
     }
     setZero('save-amount');
     setZero('remaing-balance');
