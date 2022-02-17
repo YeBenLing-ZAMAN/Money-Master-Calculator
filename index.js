@@ -4,7 +4,7 @@ function setZero(idName) {
     document.getElementById(idName).innerText = '000';
 }
 
-// Number and empty input valedation section  
+// Number and empty input valedation section and showing alert in UI
 function forStringValuedation(amount, message) {
     if (isNaN(amount)) {
         alert(`${message} money is not a number \nplease Enter a Number.`);
