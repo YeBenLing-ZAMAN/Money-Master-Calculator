@@ -14,7 +14,7 @@ function forStringValuedation(amount, message) {
         return false
     }
     else if ((parseFloat(amount) < 0)) {
-        alert(`${message} input is a negative \nplease Enter a postive Number.`);
+        alert(`${message} input is a negative value \nplease Enter a postive Number.`);
         return false
     } else {
         return true;
@@ -52,6 +52,7 @@ document.getElementById('balance-calculate').addEventListener('click', function 
 
         if (totalExpenses > (income)) {
             // notify expenses is large than income 
+            clearInput();
             alert("income is less then expenses");
         } else {
             // balance calution 
