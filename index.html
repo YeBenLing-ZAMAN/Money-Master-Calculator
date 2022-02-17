@@ -11,6 +11,33 @@
 </head>
 
 <body>
+    <!-- Button trigger modal -->
+<!--     
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+ -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="exampleModalLabel">Error</h5>
+                    <button type="button" class="btn-close"  aria-label="Close"></button>
+                </div>
+                <!-- error store section -->
+                <div  class="modal-dialog modal-dialog-centered text-capitalize">
+                    <ul id="error-store">
+                        <!-- auto create html with error -->
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container mb-5">
         <!-- title  -->
         <h1 class="title my-5 text-capitalize  text-center">expensive saving mater</h1>
@@ -57,7 +84,8 @@
                 </div>
                 <!-- calculate this input section -->
                 <div class="text-center">
-                    <button id="balance-calculate" type="button" class="btn btn-outline-info fw-bolder w-50 mb-3">Calculate</button>
+                    <button id="balance-calculate" type="button"
+                        class="btn btn-outline-info fw-bolder w-50 mb-3" data-bs-toggle="modal">Calculate</button>
                 </div>
                 <!-- result showing section  -->
                 <div class="mb-5  d-flex flex-column  align-items-center">
@@ -68,11 +96,13 @@
                 <!-- input for saving section  -->
                 <div class="px-5 ">
                     <div class="input-group mb-3">
-                        <input  id="percentage" type="text" class="form-control " placeholder="Enter Saving Percentage(%) of Income"
-                            aria-label="" aria-describedby="button-addon2">
+                        <input id="percentage" type="text" class="form-control "
+                            placeholder="Enter Saving Percentage(%) of Income" aria-label=""
+                            aria-describedby="button-addon2">
                         <span class="input-group-text text-success fw-bold ">%</span>
                         <!-- calculate for saving section  -->
-                        <button id="save" class="btn btn-outline-info fw-bolder" type="button" id="button-addon2">save</button>
+                        <button id="save" class="btn btn-outline-info fw-bolder" type="button"
+                            id="button-addon2">save</button>
                     </div>
                 </div>
                 <!-- show saving and balance section  -->
